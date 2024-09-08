@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE_SCHOOL Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-title {
+            display: none; /* إخفاء العنوان */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="admin-title">Admin Panel</h1> <!-- يمكن إخفاء هذا العنوان -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="supervision.html">Supervision</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Add Manager</h2>
+            <form id="managerForm">
+                <input type="text" id="managerName" placeholder="Manager Name" required>
+                <input type="email" id="managerEmail" placeholder="Email" required>
+                <button type="submit">Add Manager</button>
+            </form>
+            <h3>Manager List</h3>
+            <ul id="managerList"></ul>
+        </section>
+        <section>
+            <h2>Add Class</h2>
+            <form id="classForm">
+                <input type="text" id="className" placeholder="Class Name" required>
+                <input type="text" id="classGrade" placeholder="Grade" required>
+                <button type="submit">Add Class</button>
+            </form>
+            <h3>Class List</h3>
+            <ul id="classList"></ul>
+        </section>
+        <section>
+            <h2>Add Supervision</h2>
+            <form id="supervisionForm">
+                <input type="text" id="supervisionClass" placeholder="Class Name" required>
+                <input type="text" id="supervisionManager" placeholder="Manager Name" required>
+                <button type="submit">Add Supervision</button>
+            </form>
+            <h3>Supervision List</h3>
+            <ul id="supervisionList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 WE_SCHOOL. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // التحقق من الوصول
+        const validEmail = "mohammedabdelbaset35@gmail.com"; // يجب أن يتطابق مع البريد الإلكتروني في login.js
+        const email = prompt("Please enter your email to access the panel:");
+
+        if (email !== validEmail) {
+            alert("Unauthorized access. Redirecting to login.");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
